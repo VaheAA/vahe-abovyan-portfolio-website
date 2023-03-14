@@ -1,0 +1,33 @@
+@use '../util' as u;
+
+
+.hero {
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: u.rem(55);
+    width: min(100% - u.rem(20), u.rem(800));
+    margin-inline: auto;
+
+    .title {
+      margin-bottom: u.rem(40);
+    }
+  }
+
+  &__image {
+    display: block;
+    width: min(100% - u.rem(10), u.rem(151));
+    height: 100%;
+  }
+
+  &__texts {
+    width: min(100% - u.rem(10), u.rem(530));
+  }
+}

@@ -1,0 +1,23 @@
+@use '../util' as u;
+
+
+.projects {
+
+  margin-top: u.rem(80);
+
+  &__inner {
+    .title {
+      text-align: center;
+      margin-bottom: u.rem(30);
+    }
+  }
+
+  &__slide {
+    background-color: var(--primary-light-color);
+  }
+
+  .swiper {
+    width: u.rem(900);
+    height: u.rem(300);
+  }
+}

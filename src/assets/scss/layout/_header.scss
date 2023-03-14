@@ -1,0 +1,54 @@
+@use '../util' as u;
+
+.header {
+  height: u.rem(90);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &.logo {
+    display: block;
+    width: min(100% - u.rem(10), u.rem(65));
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}
+
+
+.nav {
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: u.rem(50);
+  }
+
+  &__link {
+    transition: all 0.3s ease;
+    font-size: u.rem(20);
+
+    &:hover {
+      color: var(--primary-light-color)
+    }
+  }
+}
+
+
+.line {
+  position: relative;
+
+  &::after {
+    content: '';
+    width: u.rem(50);
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    position: absolute;
+  }
+}
