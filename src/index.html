@@ -5,9 +5,12 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Explore my portfolio of front-end development projects and see how I bring designs to life with clean, efficient code. With experience in HTML, CSS, JavaScript, and responsive design, I create engaging, user-friendly websites that meet the needs of clients and users alike. Contact me today to learn how I can help bring your digital vision to life.">
+  <meta name="keywords"
+    content="front-end development, HTML, CSS, JavaScript, responsive design, user-friendly websites">
   <link rel="icon" href="./assets/img/favicon.png" type="image/png">
   <title>Vahe Abovyan | Front End Developer</title>
-
 </head>
 
 <body>
@@ -74,12 +77,14 @@
             <div class="hero__content">
               <img src="./assets/img/avatar.png" alt="Vahe Abovyan avatar" class="hero__image">
               <div class="hero__texts">
-                <h1 class="title title--primary">Vahe Abovyan</h1>
-                <p class="subtitle">Passionate JavaScript Developer with over 1 year experience.
-                  Proficient in HTML, CSS, JavaScript, and modern front-end frameworks such as React
-                  or Vue as well as backend frameworks like Express.
-                  Strong problem-solving skills, attention to detail, and ability to work under tight deadlines.
-                </p>
+                <h1 class="title title--primary">Hi, I'm Vahe Abovyan!</h1>
+                <p class="subtitle">I'm a passionate front-end developer with over a year of experience in the field.
+                  After completing my degree in computer science, I discovered my love for creating beautiful,
+                  functional websites and applications.</p> <br />
+                <p class="subtitle">My strong problem-solving skills, attention to detail, and ability to work under
+                  tight deadlines have allowed me to consistently deliver high-quality work that meets my clients'
+                  needs. In my free time, I enjoy staying up-to-date on the latest web development trends and exploring
+                  new technologies.</p>
               </div>
             </div>
           </div>
@@ -179,25 +184,9 @@
                   </a>
                 </article>
                 <article class="swiper-slide projects__slide">
-                  <a class="projects__slide-link" href="https://teleteens.co/" target="_blank"
+                  <a class="projects__slide-link" href="https://umsatzsteuer.haufe.de/" target="_blank"
                     aria-label="Teleteens website">
-                    <img class="projects__slide-image" src="./assets/img/project-4.png" alt="Teleteens website">
-                    <div class="projects__slide-content">
-                      <h3 class="title title--tertiary"> Jobs </h3>
-                      <p class="text">FullStack web application for posting and editing jobs.</p>
-                    </div>
-                    <div class="projects__slide-tech">
-                      <span class="projects__slide-tag">#React</span>
-                      <span class="projects__slide-tag">#Express</span>
-                      <span class="projects__slide-tag">#MongoDB</span>
-                      <span class="projects__slide-tag">#MaterialUI</span>
-                    </div>
-                  </a>
-                </article>
-                <article class="swiper-slide projects__slide">
-                  <a class="projects__slide-link" href="https://teleteens.co/" target="_blank"
-                    aria-label="Teleteens website">
-                    <img class="projects__slide-image" src="./assets/img/project-5.png" alt="Teleteens website">
+                    <img class="projects__slide-image" src="./assets/img/project-5.png" alt="Haufe Umsatzsteuer Pro">
                     <div class="projects__slide-content">
                       <h3 class="title title--tertiary"> Haufe Umsatzsteuer Pro </h3>
                       <p class="text">Responsive landing page for Haufe Umsatzsteuer Pro.</p>
@@ -207,6 +196,7 @@
                       <span class="projects__slide-tag">#CSS</span>
                       <span class="projects__slide-tag">#SCSS</span>
                       <span class="projects__slide-tag">#JavaScript</span>
+                      <span class="projects__slide-tag">#Gulp</span>
                     </div>
                   </a>
                 </article>
@@ -221,18 +211,21 @@
         <div class="container">
           <div class="contact__inner">
             <h2 class="title title--secondary">Contact me</h2>
-            <form action="#" class="form">
+            <form action="#" class="form" id="form">
               <div class="form-group">
                 <label class="form-label" for="name">Name</label>
                 <input class="form-input" type="text" name="name" id="name">
+                <span class="error">Please provide a name</span>
               </div>
               <div class="form-group">
                 <label class="form-label" for="email">Email</label>
                 <input class="form-input" type="email" name="email" id="email">
+                <span class="error">Please provide valid email</span>
               </div>
               <div class="form-group">
                 <label class="form-label" for="message">Message</label>
                 <textarea class="form-input" name="message" id="message"></textarea>
+                <span class="error">Please provide a message</span>
               </div>
               <button class="btn btn-main">Send!</button>
             </form>
@@ -241,7 +234,28 @@
       </section>
     </main>
     <footer class="footer">
-      footer
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__copy">
+            <span> &copy; 2023,</span>
+            <span>Designed and coded by Vahe Abovyan</span>
+          </div>
+          <div class="footer__social">
+            <ul class="footer__social-list">
+              <li class="footer__social-item">
+                <a href="https://github.com/VaheAA" target="_blank" class="footer__social-link">
+                  GitHub
+                </a>
+              </li>
+              <li class="footer__social-item">
+                <a href="https://www.linkedin.com/in/vahe-abovyan/" target="_blank" class="footer__social-link">
+                  LinkedIn
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </footer>
   </div>
 </body>

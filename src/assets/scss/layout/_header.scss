@@ -9,9 +9,11 @@
     justify-content: space-between;
   }
 
-  &.logo {
+  .logo {
     display: block;
     width: min(100% - u.rem(10), u.rem(65));
+    z-index: 9999;
+    position: relative;
 
     img {
       display: block;

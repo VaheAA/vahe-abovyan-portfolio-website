@@ -40,10 +40,19 @@ body {
 
 .main {
   flex-grow: 1;
-  padding-top: u.rem(91);
+  padding-top: u.rem(100);
+
+  @include u.breakpoint-down(small) {
+    padding-top: u.rem(40);
+  }
 }
 
 
 .no-scroll {
   overflow-y: hidden;
+}
+
+.error {
+  color: rgb(212, 21, 21);
+  display: none;
 }

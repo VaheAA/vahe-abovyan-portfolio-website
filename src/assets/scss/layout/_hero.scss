@@ -13,11 +13,13 @@
     display: flex;
     align-items: center;
     gap: u.rem(55);
-    width: min(100% - u.rem(20), u.rem(800));
+    width: min(100% - u.rem(20), u.rem(1000));
     margin-inline: auto;
 
     @include u.breakpoint-down(small) {
       flex-direction: column;
+      width: 100%;
+      text-align: center;
     }
 
     .title {
@@ -32,6 +34,6 @@
   }
 
   &__texts {
-    width: min(100% - u.rem(10), u.rem(530));
+    width: min(100% - u.rem(10), u.rem(730));
   }
 }

@@ -9,5 +9,19 @@
     color: var(--primary-dark-color);
     padding: u.rem(10) u.rem(12);
     font-size: u.rem(18);
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: all 0.3s ease;
+    font-weight: 500;
+
+    &:hover {
+      background-color: var(--secondary-dark-color);
+      color: var(--primary-light-color);
+    }
+
+    @include u.breakpoint-down(small) {
+      font-size: u.rem(16);
+    }
   }
 }

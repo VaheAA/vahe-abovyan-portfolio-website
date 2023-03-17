@@ -4,6 +4,10 @@
 .stack {
   margin-top: u.rem(100);
 
+  @include u.breakpoint-down(small) {
+    margin-top: u.rem(40);
+  }
+
   &__inner {
 
     .title {
@@ -15,10 +19,21 @@
   &__list {
     display: flex;
     justify-content: space-between;
+
+    @include u.breakpoint-down(small) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: u.rem(16);
+      place-items: center;
+    }
   }
 
   &__item {
     width: min(100% - u.rem(5), u.rem(80));
+
+    @include u.breakpoint-down(small) {
+      width: u.rem(40);
+    }
   }
 
   &__icon {

@@ -4,7 +4,11 @@
 
 .projects {
 
-  margin-top: u.rem(80);
+  margin-top: u.rem(100);
+
+  @include u.breakpoint-down(small) {
+    margin-top: u.rem(40);
+  }
 
   &__inner {
     position: relative;

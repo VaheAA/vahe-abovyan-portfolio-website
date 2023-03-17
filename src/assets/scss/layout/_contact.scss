@@ -20,6 +20,11 @@
   padding: u.rem(20);
 
 
+  @include u.breakpoint-down(small) {
+    width: 100%;
+  }
+
+
   &-group {
     display: flex;
     flex-direction: column;
@@ -27,10 +32,21 @@
     width: 100%;
     margin-bottom: u.rem(20);
 
+    &.invalid {
+
+      .error {
+        display: block;
+      }
+    }
   }
 
   &-label {
     font-size: u.rem(20);
+
+
+    @include u.breakpoint-down(small) {
+      font-size: u.rem(16);
+    }
   }
 
   &-input {
