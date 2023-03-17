@@ -1,0 +1,12 @@
+@use '../util' as u;
+
+
+.btn {
+  cursor: pointer;
+
+  &-main {
+    background-color: var(--primary-light-color);
+    color: var(--primary-dark-color);
+    padding: u.rem(10) u.rem(12);
+  }
+}

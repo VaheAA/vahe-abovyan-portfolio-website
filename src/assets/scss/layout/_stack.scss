@@ -1,0 +1,28 @@
+@use '../util' as u;
+
+
+.stack {
+  margin-top: u.rem(100);
+
+  &__inner {
+
+    .title {
+      text-align: center;
+      margin-bottom: u.rem(50);
+    }
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    width: min(100% - u.rem(5), u.rem(80));
+  }
+
+  &__icon {
+    width: 100%;
+    display: block;
+  }
+}

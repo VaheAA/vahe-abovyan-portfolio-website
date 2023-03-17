@@ -1,0 +1,40 @@
+@use '../util' as u;
+
+
+.contact {
+  padding-top: u.rem(60);
+
+  &__inner {
+    .title {
+      text-align: center;
+      margin-bottom: u.rem(30);
+    }
+  }
+}
+
+
+.form {
+  width: min(100% - u.rem(20), u.rem(550));
+  margin-inline: auto;
+  border: 1px solid var(--primary-light-color);
+  padding: u.rem(20);
+
+
+  &-group {
+    display: flex;
+    flex-direction: column;
+    gap: u.rem(10);
+    width: 100%;
+    margin-bottom: u.rem(20);
+
+  }
+
+  &-label {
+    font-size: u.rem(20);
+  }
+
+  &-input {
+    border: 1px solid var(--primary-light-color);
+    padding: u.rem(10) u.rem(14);
+  }
+}

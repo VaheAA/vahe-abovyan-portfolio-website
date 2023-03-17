@@ -1,23 +1,82 @@
 @use '../util' as u;
 
 
+
 .projects {
 
   margin-top: u.rem(80);
 
   &__inner {
+    position: relative;
+
     .title {
       text-align: center;
       margin-bottom: u.rem(30);
     }
   }
 
-  &__slide {
-    background-color: var(--primary-light-color);
+  .swiper {
+    width: u.rem(1200);
+
+
+    &-button-prev {
+      left: 0;
+    }
+
+    &-button-next {
+      right: 0;
+    }
+
+    &-button-prev,
+    &-button-next {
+      color: var(--primary-light-color);
+    }
   }
 
-  .swiper {
-    width: u.rem(900);
-    height: u.rem(300);
+  &__slide {
+    background-color: var(--secondary-dark-color);
+    transition: all 0.3s ease;
+    height: auto !important;
+    cursor: pointer;
+
+    &-link {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+    }
+
+    .title {
+      text-align: left;
+    }
   }
+
+  &__slide-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  &__slide-content {
+    padding: u.rem(10);
+  }
+
+  &__slide-tech {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: u.rem(20);
+    padding-inline: u.rem(10);
+    padding-block: u.rem(15);
+    margin-top: auto;
+  }
+
+  &__slide-tag {
+    display: inline-block;
+    background-color: var(--primary-light-color);
+    color: var(--primary-dark-color);
+    padding: u.rem(8) u.rem(10);
+    font-size: u.rem(16);
+  }
+
 }

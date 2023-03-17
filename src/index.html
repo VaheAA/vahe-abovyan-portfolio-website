@@ -22,25 +22,25 @@
           <nav class="nav">
             <ul class="nav__list">
               <li class="nav__item">
-                <a href="#" class="nav__link">About</a>
+                <a href="#about" class="nav__link">About</a>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link">Projects</a>
+                <a href="#skills" class="nav__link">Skills</a>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link">Skills</a>
+                <a href="#projects" class="nav__link">Projects</a>
               </li>
               <li class="nav__item">
-                <a href="#" class="nav__link">CV</a>
+                <a href="./files/vahe_Abovyan_cv.pdf" class="nav__link">CV</a>
               </li>
             </ul>
           </nav>
-          <button class="btn btn-main">Contact me</button>
+          <a href="#contact" class="btn btn-main">Contact me</a>
         </div>
       </div>
     </header>
     <main class="main">
-      <section class="hero">
+      <section class="hero" id="about">
         <div class="container">
           <div class="hero__inner">
             <div class="hero__content">
@@ -57,24 +57,157 @@
           </div>
         </div>
       </section>
-      <section class="projects">
+      <section class="stack" id="skills">
+        <div class="container">
+          <div class="stack__inner">
+            <h2 class="title title--secondary">Technology I work with</h2>
+            <ul class="stack__list">
+              <li class="stack__item">
+                <img class="stack__icon" src="./assets/img/icons/html.svg" alt="">
+              </li>
+              <li class="stack__item">
+                <img class="stack__icon" src="./assets/img/icons/css.svg" alt="">
+              </li>
+              <li class="stack__item">
+                <img class="stack__icon" src="./assets/img/icons/js.svg" alt="">
+              </li>
+              <li class="stack__item">
+                <img class="stack__icon" src="./assets/img/icons/typescript.svg" alt="">
+              </li>
+              <li class="stack__item">
+                <img class="stack__icon" src="./assets/img/icons/react.svg" alt="">
+              </li>
+              <li class="stack__item">
+                <img class="stack__icon" src="./assets/img/icons/vue.svg" alt="">
+              </li>
+              <li class="stack__item">
+                <img class="stack__icon" src="./assets/img/icons/node.svg" alt="">
+              </li>
+              <li class="stack__item">
+                <img class="stack__icon" src="./assets/img/icons/express.svg" alt="">
+              </li>
+              <li class="stack__item">
+                <img class="stack__icon" src="./assets/img/icons/firebase.svg" alt="">
+              </li>
+              <li class="stack__item">
+                <img class="stack__icon" src="./assets/img/icons/postgres.svg" alt="">
+              </li>
+              <li class="stack__item">
+                <img class="stack__icon" src="./assets/img/icons/mysql.svg" alt="">
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="projects" id="projects">
         <div class="container">
           <div class="projects__inner">
             <h2 class="title title--secondary">Projects</h2>
             <div class="swiper">
               <div class="swiper-wrapper">
-                <div class="swiper-slide projects__slide">Slide 1</div>
-                <div class="swiper-slide projects__slide">Slide 2</div>
-                <div class="swiper-slide projects__slide">Slide 3</div>
-                <div class="swiper-slide projects__slide">Slide 4</div>
-                <div class="swiper-slide projects__slide">Slide 5</div>
-                <div class="swiper-slide projects__slide">Slide 6</div>
+                <article class="swiper-slide projects__slide">
+                  <a class="projects__slide-link" href="https://teampay.am/en/" target="_blank"
+                    aria-label="TeamPay website">
+                    <img class="projects__slide-image" src="./assets/img/project-1.png" alt="TeamPay website">
+                    <div class="projects__slide-content">
+                      <h3 class="title title--tertiary">TeamPay website</h3>
+                      <p class="text"> Multilingual website for the TeamPay payment company.</p>
+                    </div>
+                    <div class="projects__slide-tech">
+                      <span class="projects__slide-tag">#Vue3</span>
+                      <span class="projects__slide-tag">#CSS</span>
+                      <span class="projects__slide-tag">#i18n</span>
+                    </div>
+                  </a>
+                </article>
+                <article class="swiper-slide projects__slide">
+                  <a class="projects__slide-link" href="https://whalecollective.io/" target="_blank"
+                    aria-label="Whale Collective website">
+                    <img class="projects__slide-image" src="./assets/img/project-2.png" alt="Whale Collectivewebsite">
+                    <div class="projects__slide-content">
+                      <h3 class="title title--tertiary">Whale Collective</h3>
+                      <p class="text"> Whale Collective NFT collection landing page </p>
+                    </div>
+                    <div class="projects__slide-tech">
+                      <span class="projects__slide-tag">#React</span>
+                      <span class="projects__slide-tag">#CSS</span>
+                    </div>
+                  </a>
+                </article>
+                <article class="swiper-slide projects__slide">
+                  <a class="projects__slide-link" href="https://teleteens.co/" target="_blank"
+                    aria-label="Teleteens website">
+                    <img class="projects__slide-image" src="./assets/img/project-3.png" alt="Teleteens website">
+                    <div class="projects__slide-content">
+                      <h3 class="title title--tertiary">Teleteens</h3>
+                      <p class="text"> Multilingual website for the Teleteens - a Filtered version of Telegram that is
+                        suitable for young family members, students or workers who wish to focus</p>
+                    </div>
+                    <div class="projects__slide-tech">
+                      <span class="projects__slide-tag">#React</span>
+                      <span class="projects__slide-tag">#CSS</span>
+                      <span class="projects__slide-tag">#i18n</span>
+                    </div>
+                  </a>
+                </article>
+                <article class="swiper-slide projects__slide">
+                  <a class="projects__slide-link" href="https://teleteens.co/" target="_blank"
+                    aria-label="Teleteens website">
+                    <img class="projects__slide-image" src="./assets/img/project-4.png" alt="Teleteens website">
+                    <div class="projects__slide-content">
+                      <h3 class="title title--tertiary"> Jobs </h3>
+                      <p class="text">FullStack web application for posting and editing jobs.</p>
+                    </div>
+                    <div class="projects__slide-tech">
+                      <span class="projects__slide-tag">#React</span>
+                      <span class="projects__slide-tag">#Express</span>
+                      <span class="projects__slide-tag">#MongoDB</span>
+                      <span class="projects__slide-tag">#MaterialUI</span>
+                    </div>
+                  </a>
+                </article>
+                <article class="swiper-slide projects__slide">
+                  <a class="projects__slide-link" href="https://teleteens.co/" target="_blank"
+                    aria-label="Teleteens website">
+                    <img class="projects__slide-image" src="./assets/img/project-5.png" alt="Teleteens website">
+                    <div class="projects__slide-content">
+                      <h3 class="title title--tertiary"> Haufe Umsatzsteuer Pro </h3>
+                      <p class="text">Responsive landing page for Haufe Umsatzsteuer Pro.</p>
+                    </div>
+                    <div class="projects__slide-tech">
+                      <span class="projects__slide-tag">#HTML</span>
+                      <span class="projects__slide-tag">#CSS</span>
+                      <span class="projects__slide-tag">#SCSS</span>
+                      <span class="projects__slide-tag">#JavaScript</span>
+                    </div>
+                  </a>
+                </article>
               </div>
-              <div class="swiper-pagination"></div>
-              <div class="swiper-button-prev"></div>
-              <div class="swiper-button-next"></div>
-              <div class="swiper-scrollbar"></div>
             </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <div class="container">
+          <div class="contact__inner">
+            <h2 class="title title--secondary">Contact me</h2>
+            <form action="#" class="form">
+              <div class="form-group">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-input" type="text" name="name" id="name">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-input" type="email" name="email" id="email">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="message">Message</label>
+                <textarea class="form-input" name="message" id="message"></textarea>
+              </div>
+              <button class="btn btn-main">Send!</button>
+            </form>
           </div>
         </div>
       </section>

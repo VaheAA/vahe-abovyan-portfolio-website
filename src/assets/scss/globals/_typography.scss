@@ -19,6 +19,11 @@ h3 {
     font-size: clamp(u.rem(22), u.rem(14) + 1.5vw, u.rem(38));
     line-height: u.rem(40);
   }
+
+  &--tertiary {
+    font-size: clamp(u.rem(20), u.rem(14) + 1.5vw, u.rem(28));
+    line-height: u.rem(30);
+  }
 }
 
 .subtitle {
