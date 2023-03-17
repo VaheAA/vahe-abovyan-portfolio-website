@@ -42,3 +42,8 @@ body {
   flex-grow: 1;
   padding-top: u.rem(91);
 }
+
+
+.no-scroll {
+  overflow-y: hidden;
+}

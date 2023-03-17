@@ -16,6 +16,10 @@
     width: min(100% - u.rem(20), u.rem(800));
     margin-inline: auto;
 
+    @include u.breakpoint-down(small) {
+      flex-direction: column;
+    }
+
     .title {
       margin-bottom: u.rem(40);
     }

@@ -1,0 +1,46 @@
+@use '../util' as u;
+
+.hamburger {
+  background: transparent;
+  border: 0;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  position: relative;
+  z-index: 10;
+  transition: all 0.2s ease;
+  display: block;
+
+  &__line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background-color: var(--primary-light-color);
+    transform: rotate(0);
+    transition: all 0.3s ease;
+
+    &-middle {
+      transform: translateY(8px);
+    }
+
+    &-bottom {
+      transform: translateY(16px);
+    }
+  }
+
+  &.open {
+    .hamburger__line-top {
+      transform: rotate(45deg) translateY(7px) translateX(7px);
+    }
+
+    .hamburger__line-middle {
+      display: none;
+    }
+
+    .hamburger__line-bottom {
+      transform: rotate(-45deg) translateY(7px) translateX(-7px);
+    }
+  }
+}

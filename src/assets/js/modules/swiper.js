@@ -1,20 +1,20 @@
 // core version + navigation, pagination modules:
-import Swiper, { Navigation, Pagination } from 'swiper';
+import Swiper, { Navigation } from 'swiper';
 // import Swiper and modules styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 const swiper = new Swiper('.swiper', {
   // Optional parameters
-  modules: [Navigation, Pagination],
+  modules: [Navigation],
   direction: 'horizontal',
   slidesPerView: 3,
   spaceBetween: 25,
-
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination'
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 20
+    }
   },
 
   // Navigation arrows

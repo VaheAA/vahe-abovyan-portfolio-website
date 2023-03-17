@@ -19,6 +19,11 @@
     width: u.rem(1200);
 
 
+    @include u.breakpoint-down(small) {
+      width: 100%;
+    }
+
+
     &-button-prev {
       left: 0;
     }
@@ -30,6 +35,11 @@
     &-button-prev,
     &-button-next {
       color: var(--primary-light-color);
+
+      @include u.breakpoint-down(small) {
+        display: none;
+      }
+
     }
   }
 
