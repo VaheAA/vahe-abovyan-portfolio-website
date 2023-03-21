@@ -236,7 +236,12 @@
                 <textarea class="form-input" name="message" id="message"></textarea>
                 <span class="error">Please provide a message</span>
               </div>
-              <button class="btn btn-main">Send!</button>
+              <button class="btn btn-main btn-row" data-btn="submit">
+                <span>Send!</span>
+                <div class="spinner">
+                  <img src="./assets/img/spinner.svg" alt="">
+                </div>
+              </button>
             </form>
           </div>
         </div>
@@ -267,6 +272,7 @@
       </div>
     </footer>
   </div>
+  <div class="toast"></div>
 </body>
 
 </html>

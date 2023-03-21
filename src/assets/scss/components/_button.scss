@@ -24,4 +24,17 @@
       font-size: u.rem(16);
     }
   }
+
+  &-row {
+    display: flex;
+    align-items: center;
+    gap: u.rem(20);
+    justify-content: center;
+    position: relative;
+  }
+
+  &--disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 }
