@@ -22,6 +22,13 @@ function showToast(msg, timeout) {
   }, timeout);
 }
 
+function sendEvent() {
+  gtag('event', 'submit_form', {
+    app_name: 'portfolio',
+    screen_name: 'main'
+  });
+}
+
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
   if (validateInputs() === 0) {
@@ -43,6 +50,7 @@ form.addEventListener('submit', async (event) => {
       const data = await res.json();
       showToast(data.msg, 3000);
       form.reset();
+      sendEvent();
       spinner.style.display = 'none';
       submitBtn.classList.remove('disabled');
     } catch (error) {
