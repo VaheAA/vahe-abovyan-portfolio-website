@@ -7,3 +7,9 @@ menuBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('open');
   body.classList.toggle('no-scroll');
 });
+
+mobileMenu.addEventListener('click', () => {
+  menuBtn.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  body.classList.remove('no-scroll');
+});
