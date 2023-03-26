@@ -14,32 +14,40 @@ module.exports = {
   devtool,
   devServer: {
     port: 3000,
-    open: true
+    open: true,
     // hot: true
   },
   entry: [
     '@babel/polyfill',
-    path.resolve(__dirname, 'src/assets/js', 'index.js')
+    path.resolve(__dirname, 'src/assets/js', 'index.js'),
   ],
   output: {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
     filename: './assets/js/[name].[contenthash].js',
-    assetModuleFilename: './assets/img/[hash][ext]'
+    assetModuleFilename: './assets/img/[hash][ext]',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src', 'index.html')
+      template: path.resolve(__dirname, 'src', 'index.html'),
     }),
     new MiniCssExtractPlugin({
-      filename: './assets/css/[name].[contenthash].css'
-    })
+      filename: './assets/css/[name].[contenthash].css',
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'src/assets/files',
+          to: 'files',
+        },
+      ],
+    }),
   ],
   module: {
     rules: [
       {
         test: /\.html$/i,
-        loader: 'html-loader'
+        loader: 'html-loader',
       },
       {
         test: /\.(c|sc|sa)ss$/i,
@@ -50,19 +58,19 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [require('postcss-preset-env')]
-              }
-            }
+                plugins: [require('postcss-preset-env')],
+              },
+            },
           },
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.woff2?$/i,
         type: 'asset/resource',
         generator: {
-          filename: './assets/fonts/[name][ext]'
-        }
+          filename: './assets/fonts/[name][ext]',
+        },
       },
       {
         test: /\.(jpe?g|png|svg|webp|gif)$/i,
@@ -72,30 +80,30 @@ module.exports = {
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 75
+                quality: 75,
               },
               // optipng.enabled: false will disable optipng
               optipng: {
-                enabled: false
+                enabled: false,
               },
               pngquant: {
                 quality: [0.65, 0.9],
-                speed: 4
+                speed: 4,
               },
               gifsicle: {
-                interlaced: false
+                interlaced: false,
               },
               // the webp option will enable WEBP
               webp: {
-                quality: 75
-              }
-            }
-          }
+                quality: 75,
+              },
+            },
+          },
         ],
         type: 'asset/resource',
         generator: {
-          filename: './assets/img/[hash][ext]'
-        }
+          filename: './assets/img/[hash][ext]',
+        },
       },
       {
         test: /\.m?js$/,
@@ -103,10 +111,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [['@babel/preset-env', { targets: 'defaults' }]]
-          }
-        }
-      }
-    ]
-  }
+            presets: [['@babel/preset-env', { targets: 'defaults' }]],
+          },
+        },
+      },
+    ],
+  },
 };
