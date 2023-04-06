@@ -52,6 +52,7 @@
   &-input {
     border: 1px solid var(--primary-light-color);
     padding: u.rem(10) u.rem(14);
+    transition: all 0.3s ease;
 
     &:focus {
       outline: none;

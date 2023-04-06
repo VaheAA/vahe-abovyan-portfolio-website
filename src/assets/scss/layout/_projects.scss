@@ -21,6 +21,7 @@
 
   .swiper {
     width: u.rem(1200);
+    padding-bottom: u.rem(40);
 
 
     @include u.breakpoint-down(small) {
