@@ -9,7 +9,6 @@ const swiper = new Swiper('.swiper', {
   // Optional parameters
   modules: [Navigation, Pagination],
   direction: 'horizontal',
-  slidesPerView: 3,
   spaceBetween: 25,
   pagination: {
     el: '.swiper-pagination',
@@ -20,9 +19,17 @@ const swiper = new Swiper('.swiper', {
       slidesPerView: 1,
       spaceBetween: 20,
     },
-    780: {
+    480: {
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1000: {
       slidesPerView: 3,
-      spaceBetween: 25,
+      spaceBetween: 20,
     },
   },
 

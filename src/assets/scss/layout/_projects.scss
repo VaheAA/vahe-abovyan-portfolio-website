@@ -50,9 +50,14 @@
 
   &__slide {
     background-color: var(--secondary-dark-color);
-    transition: all 0.3s ease;
     height: auto !important;
     cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, .2);
+      background-color: var(--primary-dark-color);
+    }
 
     &-link {
       display: flex;
@@ -68,7 +73,7 @@
 
   &__slide-image {
     width: 100%;
-    height: 250px;
+    height: u.rem(250);
     object-fit: cover;
   }
 
