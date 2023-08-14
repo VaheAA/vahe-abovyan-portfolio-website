@@ -1,0 +1,65 @@
+@use '../util' as u;
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: u.rem(60);
+  height: u.rem(32);
+
+  &__input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked+.switch__slider {
+      background: var(--secondary-dark-color);
+    }
+
+    &:checked+.switch__slider::before {
+      background-color: var(--background-color);
+      background-image: url("../img/icons/sun.svg");
+    }
+
+    &:not(:checked):active+.switch__slider::before {
+      width: 2.4rem;
+    }
+
+    &:checked:active+.switch__slider::before {
+      transform: translate(1rem, -50%);
+      width: 2.4rem;
+    }
+
+    &:checked+.switch__slider::before {
+      transform: translate(1.8rem, -50%);
+    }
+  }
+
+  &__slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--secondary-dark-color);
+    transition: background 0.2s;
+    cursor: pointer;
+
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 1.6rem;
+      width: 1.6rem;
+      background-color: var(--primary-color-2);
+      transition: transform 0.2s, width 0.2s, background 0.2s;
+      background-image: url("../img/icons/moon.svg");
+      background-size: 75%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  }
+
+}
