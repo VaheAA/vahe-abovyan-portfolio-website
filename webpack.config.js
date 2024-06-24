@@ -2,6 +2,8 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
+
 const glob = require("glob");
 
 const mode = process.env.NODE_ENV || "development";
@@ -44,6 +46,12 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "./assets/css/[name].[contenthash].css",
     }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: 'src/assets/files',
+          to: 'files',
+        }]}),
     ...htmlPlugins,
   ],
   module: {
