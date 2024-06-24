@@ -1,12 +1,27 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { WebpackManifestPlugin } = require("webpack-manifest-plugin");
+const glob = require("glob");
 
-const mode = process.env.NODE_ENV || 'development';
-const devMode = mode === 'development';
-const target = devMode ? 'web' : 'browserslist';
-const devtool = devMode && 'source-map';
+const mode = process.env.NODE_ENV || "development";
+const devMode = mode === "development";
+const target = devMode ? "web" : "browserslist";
+const devtool = devMode && "source-map";
+
+const htmlFiles = glob.sync("./src/**/*.html");
+
+const htmlPlugins = htmlFiles.map((file) => {
+  return new HtmlWebpackPlugin({
+    filename: path.basename(file),
+    template: file,
+    inject: true,
+    chunks: ["main"],
+    templateParameters: {
+      preloadCss: true,
+    },
+  });
+});
 
 module.exports = {
   mode,
@@ -15,74 +30,64 @@ module.exports = {
   devServer: {
     port: 3000,
     open: true,
-    // hot: true
+    hot: true,
   },
   entry: [
-    '@babel/polyfill',
-    path.resolve(__dirname, 'src/assets/js', 'index.js'),
+    "@babel/polyfill",
+    path.resolve(__dirname, "src/assets/js", "index.js"),
   ],
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    clean: true,
-    filename: './assets/js/[name].[contenthash].js',
-    assetModuleFilename: './assets/img/[hash][ext]',
+    path: path.resolve(__dirname, "dist"),
+    clean: process.env.NODE_ENV === "production",
+    filename: "./assets/js/[name].[contenthash].js",
+    assetModuleFilename: "./assets/img/[hash][ext]",
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'src', 'index.html'),
-    }),
+    new WebpackManifestPlugin(),
     new MiniCssExtractPlugin({
-      filename: './assets/css/[name].[contenthash].css',
+      filename: "./assets/css/[name].[contenthash].css",
     }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: 'src/assets/files',
-          to: 'files',
-        },
-      ],
-    }),
+    ...htmlPlugins,
   ],
   module: {
     rules: [
       {
         test: /\.html$/i,
-        loader: 'html-loader',
+        loader: "html-loader",
       },
       {
         test: /\.(c|sc|sa)ss$/i,
         use: [
-          devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
+          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          "css-loader",
           {
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               postcssOptions: {
-                plugins: [require('postcss-preset-env')],
+                plugins: [require("postcss-preset-env")],
               },
             },
           },
-          'sass-loader',
+          "sass-loader",
         ],
       },
       {
         test: /\.woff2?$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
         generator: {
-          filename: './assets/fonts/[name][ext]',
+          filename: "./assets/fonts/[name][ext]",
         },
       },
       {
         test: /\.(jpe?g|png|svg|webp|gif)$/i,
         use: [
           {
-            loader: 'image-webpack-loader',
+            loader: "image-webpack-loader",
             options: {
               mozjpeg: {
                 progressive: true,
                 quality: 75,
               },
-              // optipng.enabled: false will disable optipng
               optipng: {
                 enabled: false,
               },
@@ -93,25 +98,24 @@ module.exports = {
               gifsicle: {
                 interlaced: false,
               },
-              // the webp option will enable WEBP
               webp: {
                 quality: 75,
               },
             },
           },
         ],
-        type: 'asset/resource',
+        type: "asset/resource",
         generator: {
-          filename: './assets/img/[hash][ext]',
+          filename: "./assets/img/[name][ext]",
         },
       },
       {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: [['@babel/preset-env', { targets: 'defaults' }]],
+            presets: [["@babel/preset-env", { targets: "defaults" }]],
           },
         },
       },
