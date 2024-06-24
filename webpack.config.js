@@ -17,9 +17,6 @@ const htmlPlugins = htmlFiles.map((file) => {
     template: file,
     inject: true,
     chunks: ["main"],
-    templateParameters: {
-      preloadCss: true,
-    },
   });
 });
 
@@ -58,7 +55,7 @@ module.exports = {
       {
         test: /\.(c|sc|sa)ss$/i,
         use: [
-          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           "css-loader",
           {
             loader: "postcss-loader",
